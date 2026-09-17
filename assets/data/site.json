@@ -1,0 +1,328 @@
+{
+  "_note": "Globalus turinys. Faktai iš FB puslapio (apify facebook-pages-scraper), FB atsiliepimų ir įrašų. Nieko neišgalvoti.",
+  "brand": {
+    "name": "Pikio baldai",
+    "legal": "MB „Pikio baldai“",
+    "code": "307094158",
+    "reg_address": "Taikos g. 4, Stakliškių k., LT-59372 Prienų r.",
+    "base": "Kaunas",
+    "manager": "Ričardas Kasiulis",
+    "phone": "+370 631 88918",
+    "phone_href": "tel:+37063188918",
+    "email": "pikiobaldai@gmail.com",
+    "facebook": "https://www.facebook.com/pikiobaldai/",
+    "facebook_reviews": "https://www.facebook.com/pikiobaldai/reviews",
+    "messenger": "https://m.me/pikiobaldai",
+    "instagram": "https://www.instagram.com/pikiobaldai/",
+    "instagram_dm": "https://ig.me/m/pikiobaldai",
+    "instagram_handle": "@pikiobaldai",
+    "hours": "Skambinkite bet kuriuo metu",
+    "cities": [
+      "Kaunas",
+      "Vilnius",
+      "Alytus",
+      "Varėna"
+    ],
+    "cities_loc": [
+      "Kaune",
+      "Vilniuje",
+      "Alytuje",
+      "Varėnoje"
+    ],
+    "domain_recommended": "https://pikiobaldai.lt",
+    "form_endpoint": "https://formsubmit.co/pikiobaldai@gmail.com"
+  },
+  "seo": {
+    "home_title": "Pikio baldai | Nestandartiniai korpusiniai baldai Kaune",
+    "home_description": "Projektuojame, gaminame ir montuojame nestandartinius korpusinius baldus Kaune: virtuves, spintas, prieškambarius ir vonios baldus namams bei verslui.",
+    "projects_title": "Projektai | Pikio baldai",
+    "projects_description": "Virtuvės, spintos ir drabužinės, prieškambariai, vonios ir baldai verslui. Realūs Pikio baldai projektai su medžiagų aprašymais.",
+    "contacts_title": "Kontaktai ir užklausa | Pikio baldai",
+    "contacts_description": "Aptarkime jūsų erdvę: +370 631 88918, pikiobaldai@gmail.com. Dirbame Kaune, Vilniuje, Alytuje ir Varėnoje."
+  },
+  "nav": [
+    {
+      "label": "Projektai",
+      "href": "/projektai/"
+    },
+    {
+      "label": "Procesas",
+      "href": "/#procesas"
+    },
+    {
+      "label": "Medžiagos",
+      "href": "/#medziagos"
+    },
+    {
+      "label": "Atsiliepimai",
+      "href": "/#atsiliepimai"
+    },
+    {
+      "label": "DUK",
+      "href": "/#duk"
+    },
+    {
+      "label": "Kontaktai",
+      "href": "/kontaktai/"
+    }
+  ],
+  "hero": {
+    "h1": "Baldai, kurie prisitaiko prie jūsų erdvės",
+    "lead": "Nestandartiniai korpusiniai baldai Kaune. Projektuojame, gaminame ir sumontuojame patys: nuo pirmo matavimo iki paskutinės rankenėlės.",
+    "cta": "Aptarti projektą",
+    "proof_figure": "100 %",
+    "proof_text": "rekomenduoja „Facebook“ · 7 atsiliepimai",
+    "caption": "Namų biblioteka, Kaunas",
+    "caption_href": "/projektai/namu-biblioteka/"
+  },
+  "work": {
+    "h2": "Darbai, kurie jau gyvena namuose",
+    "text": "Virtuvės, spintos, prieškambariai ir vonios. Kiekvienas projektas prasideda nuo matavimų ir baigiasi montavimu.",
+    "all_label": "Visi projektai"
+  },
+  "flagship": {
+    "h2": "Namas Akademijos miestelyje",
+    "meta": "Akademijos miestelis, Kauno r. · Visas namas etapais",
+    "lead": "Visam namui baldus kuriame etapais. Pirmiausia virtuvė, tada tualeto ir vonios kambariai, o toliau kitos šių namų erdvės.",
+    "link": "Visas projektas"
+  },
+  "materials": {
+    "h2": "Iš ko pagaminta",
+    "text": "Plokštes, stalviršius ir furnitūrą parenkame kartu su jumis. Čia medžiagos, kurias naudojome realiuose projektuose, su tikraisiais jų pavadinimais.",
+    "note": "Durelėms ir stalčiams daugiausia naudojame BLUM ir GRASS mechanizmus.",
+    "groups": [
+      {
+        "title": "Fasadai ir korpusai",
+        "items": [
+          {
+            "id": "tobacco-craft",
+            "name": "Tobacco Craft ąžuolas",
+            "code": "LMDP, K004 PW",
+            "swatch": "fb:055",
+            "swatch_hint": "ąžuolo rašto viršutinių spintelių durelės, lygus plotas be rankenėlių",
+            "plate": "fb:055",
+            "project": "virtuve-tobacco-craft"
+          },
+          {
+            "id": "light-atelier",
+            "name": "Light Atelier",
+            "code": "LMDP, 18 mm",
+            "swatch": "fb:064",
+            "swatch_hint": "betono rašto vonios spintelės fasadas, lygus plotas",
+            "plate": "fb:064",
+            "project": "ringaudu-vonios"
+          }
+        ]
+      },
+      {
+        "title": "Stalviršiai ir sienelės",
+        "items": [
+          {
+            "id": "compact-6089",
+            "name": "Compact HPL 6089 Plus",
+            "code": "Lamicolor, 10 mm",
+            "swatch": "fb:045",
+            "swatch_hint": "tamsi HPL sienelė virš stalviršio",
+            "plate": "fb:045",
+            "project": "virtuve-smelio-fasadais"
+          },
+          {
+            "id": "olympus-ol04",
+            "name": "Tamsus marmuras",
+            "code": "OL04 Olympus, su juodu užpildu",
+            "swatch": "frame:post14@7.8",
+            "swatch_hint": "tamsaus marmuro sienelė arba stalviršis",
+            "plate": "frame:post14@10.0",
+            "project": "tamsi-virtuve"
+          },
+          {
+            "id": "lancelot",
+            "name": "Lanceloto ąžuolas",
+            "code": "stalviršis ir LMDP",
+            "swatch": "fb:122",
+            "swatch_hint": "ąžuolo stalviršio paviršius su medžio rievėmis",
+            "plate": "fb:126",
+            "project": "virtuve-be-virsutiniu-spinteliu"
+          }
+        ]
+      },
+      {
+        "title": "Furnitūra ir rankenėlės",
+        "items": [
+          {
+            "id": "tandembox",
+            "name": "Blum Tandembox Plus",
+            "code": "stalčių sistema",
+            "swatch": "fb:124",
+            "swatch_hint": "atidaryti stalčiai, stalčiaus šonas ir bėgelis centre",
+            "plate": "fb:124",
+            "project": "virtuve-be-virsutiniu-spinteliu"
+          },
+          {
+            "id": "brass-handles",
+            "name": "Žalvario atspalvio rankenėlės",
+            "code": "1120 mm ir 256 mm",
+            "swatch": "fb:067",
+            "swatch_hint": "ilga žalvarinė rankenėlė ant dažyto fasado, rankenėlė centre",
+            "plate": "fb:067",
+            "project": "dazyto-mdf-prieskambaris"
+          },
+          {
+            "id": "gold-handles",
+            "name": "Aukso spalvos rankenėlės",
+            "code": "ant tamsaus fasado",
+            "swatch": "fb:018",
+            "swatch_hint": "aukso spalvos rankenėlė ant tamsaus medžio rašto fasado, rankenėlė centre",
+            "plate": "fb:018",
+            "project": "spinteles-aukso-rankenelemis"
+          }
+        ]
+      }
+    ]
+  },
+  "process": {
+    "h2": "Nuo matavimo iki montavimo",
+    "lead": "Baldus projektuojame, gaminame ir montuojame patys, todėl už rezultatą atsako tie patys žmonės nuo pradžios iki galo.",
+    "steps": [
+      {
+        "title": "Pokalbis",
+        "text": "Paskambinkite arba parašykite. Aptarsime, kokių baldų reikia, kaip jais naudositės ir kokio stiliaus norite. Jei turite, atsiųskite patalpos nuotrauką ar planą."
+      },
+      {
+        "title": "Matavimas",
+        "text": "Atvykstame ir išmatuojame erdvę vietoje. Tikslūs matmenys leidžia išnaudoti kiekvieną kampą, nišą ar nuožulnias lubas."
+      },
+      {
+        "title": "Projektas",
+        "text": "Suprojektuojame baldus ir kartu parenkame plokštes, stalviršį, rankenėles ir furnitūrą. Prieš gamybą matote, kaip baldai atrodys.",
+        "viz": {
+          "render": "fb:127",
+          "real": "fb:126",
+          "caption": "Virtuvė be viršutinių spintelių: nuo vizualizacijos iki realybės.",
+          "href": "/projektai/virtuve-be-virsutiniu-spinteliu/"
+        }
+      },
+      {
+        "title": "Gamyba",
+        "text": "Baldus gaminame pagal patvirtintą projektą. Naudojame patikimą BLUM ir GRASS furnitūrą, kad durelės ir stalčiai tarnautų ilgai."
+      },
+      {
+        "title": "Montavimas",
+        "text": "Atvežame, sumontuojame ir paliekame tvarkingą erdvę. Klientai atsiliepimuose mini, kad dirbame greitai ir švariai."
+      }
+    ]
+  },
+  "break": {
+    "src": "fb:033",
+    "caption": "Prieškambaris su minkštasuoliu",
+    "href": "/projektai/prieskambaris-su-minkstasuoliu/",
+    "alt": "Minkštasuolis prie lango tarp aukštų prieškambario spintų"
+  },
+  "reviews": {
+    "h2": "Ką sako klientai",
+    "figure": "100 %",
+    "figure_label": "rekomenduoja „Facebook“",
+    "count_label": "7 atsiliepimai iš 7",
+    "all_label": "Visi atsiliepimai „Facebook“",
+    "featured": {
+      "name": "Dovilė Š.",
+      "text": "Esame patenkinti darbu ir norų išpildymu 100 %. Malonu bendradarbiauti, kai atsižvelgia į kiekvieną smulkmeną, pataria ir padeda rasti geriausią sprendimą klientui."
+    },
+    "items": [
+      {
+        "name": "Aistė Č.",
+        "text": "Puikiai komunikuoja proceso metu, idėjas pagauna ir įgyvendina, jokių nesusipratimų nebuvo, dirba greitai ir labai švariai."
+      },
+      {
+        "name": "Gintarė P.",
+        "text": "Tik pačios geriausios rekomendacijos! Nereikia laukti kelių mėnesių savo užsakymo, dirba greitai ir kokybiškai. Atsakingi ir darbštūs vyrukai. Aš būtinai vėl kreipsiuosi."
+      },
+      {
+        "name": "Juozapas G.",
+        "text": "Labai kruopščiai ir kokybiškai atlieka darbus. Rekomenduoju."
+      },
+      {
+        "name": "Benas Č.",
+        "text": "Darbai atlikti laiku ir kokybiškai, puiki komunikacija."
+      },
+      {
+        "name": "Janina B.",
+        "text": "Rekomenduoju, greitai ir kokybiškai padarė virtuvės komplekto baldus."
+      },
+      {
+        "name": "Vasilijus P.",
+        "text": "Atsakingi ir tvarkingi darbuotojai, dirba lyg sau."
+      }
+    ],
+    "returning": {
+      "title": "Sugrįžtantys klientai",
+      "text": "Tie patys užsakovai, kuriems gaminome virtuvę, vėliau patikėjo mums ir prieškambario spintą. Pas mus grįžtama ir su kitais projektais, pavyzdžiui, TV baldu.",
+      "href": "/projektai/sugrize-klientai/"
+    },
+    "press": {
+      "text": "Mūsų įmonė ir darbai pristatyti žurnale „Jumsinfo Statyba“.",
+      "image": "frame:post21@4.4"
+    }
+  },
+  "faq": {
+    "h2": "Dažniausi klausimai",
+    "aside": "Neradote atsakymo? Paskambinkite",
+    "items": [
+      {
+        "q": "Ar baldus galima pritaikyti nestandartinei erdvei?",
+        "a": "Taip, tai mūsų pagrindinis darbas. Baldus projektuojame pagal jūsų patalpos matmenis: nišas, kampus ar nuožulnias lubas. Pavyzdžiui, prieškambaryje paslėpėme duris į katilinę, o kitur viena konstrukcija tapo dviem spintomis dviem kambariams."
+      },
+      {
+        "q": "Ar prieš gamybą parodote, kaip baldai atrodys?",
+        "a": "Taip. Prieš gamybą baldus suprojektuojame ir kartu parenkame plokštes, stalviršį bei furnitūrą, kad žinotumėte, ką gausite."
+      },
+      {
+        "q": "Kiek laiko trunka gamyba?",
+        "a": "Tikslų terminą pasakome kartu su pasiūlymu, kai aiškūs matmenys ir medžiagos. Jis priklauso nuo baldų kiekio ir pasirinktų plokščių.",
+        "pending": "kliento tipinis terminas savaitėmis"
+      },
+      {
+        "q": "Kiek kainuoja nestandartiniai baldai?",
+        "a": "Kiekvienas projektas skaičiuojamas atskirai pagal matmenis, plokštes, stalviršį ir furnitūrą. Atsiųskite patalpos nuotrauką ar matmenis, ir paruošime pasiūlymą."
+      },
+      {
+        "q": "Ar matavimas nemokamas?",
+        "a": "Matavimo sąlygas aptariame telefonu dar prieš atvykdami, kad nebūtų netikėtumų.",
+        "pending": "ar matavimas nemokamas"
+      },
+      {
+        "q": "Kokią furnitūrą naudojate?",
+        "a": "Daugiausia BLUM ir GRASS: stalčių sistemas, švelnaus uždarymo lankstus ir pakėlimo mechanizmus. Rankenėles parenkame pagal stilių arba darome baldus be jų, su paslėptais atidarymo mechanizmais."
+      },
+      {
+        "q": "Kur dirbate?",
+        "a": "Esame Kaune. Baldus gaminame ir montuojame Kaune, Vilniuje, Alytuje ir Varėnoje."
+      }
+    ]
+  },
+  "cities": {
+    "label": "Dirbame",
+    "note": "Atvykstame išmatuoti ir sumontuoti į jūsų namus ar patalpas."
+  },
+  "contact": {
+    "h2": "Aptarkime jūsų erdvę",
+    "text": "Atsiųskite patalpos nuotrauką ar apytikslius matmenis. Peržiūrėsime ir susisieksime dėl pasiūlymo.",
+    "types": [
+      "Virtuvė",
+      "Spinta ar drabužinė",
+      "Prieškambaris",
+      "Vonia",
+      "Kita"
+    ],
+    "submit": "Siųsti užklausą",
+    "after": "Atsakysime telefonu arba el. paštu.",
+    "privacy": "Jūsų duomenis naudosime tik atsakyti į šią užklausą.",
+    "thanks_h1": "Ačiū, užklausa išsiųsta",
+    "thanks_text": "Peržiūrėsime ir susisieksime artimiausiu metu. Jei skuba, skambinkite +370 631 88918."
+  },
+  "cta_band": {
+    "h2": "Norite panašių baldų?",
+    "text": "Kiekvienas baldas kuriamas iš naujo, pagal jūsų erdvę.",
+    "btn": "Aptarti projektą"
+  }
+}
