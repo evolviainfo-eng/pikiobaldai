@@ -1,7 +1,10 @@
 {
   "redirects": [
-    { "source": "/projektai/:path*", "destination": "/#darbai", "permanent": false },
-    { "source": "/kontaktai/:path*", "destination": "/#kontaktai", "permanent": false },
-    { "source": "/aciu/:path*", "destination": "/", "permanent": false }
+    { "source": "/projektai", "destination": "/#darbai", "permanent": false },
+    { "source": "/projektai/(.*)", "destination": "/#darbai", "permanent": false },
+    { "source": "/kontaktai", "destination": "/#kontaktai", "permanent": false },
+    { "source": "/kontaktai/(.*)", "destination": "/#kontaktai", "permanent": false },
+    { "source": "/aciu", "destination": "/", "permanent": false },
+    { "source": "/aciu/(.*)", "destination": "/", "permanent": false }
   ]
 }
