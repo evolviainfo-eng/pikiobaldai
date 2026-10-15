@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/projektai/:path*", "destination": "/#darbai", "permanent": false },
+    { "source": "/kontaktai/:path*", "destination": "/#kontaktai", "permanent": false },
+    { "source": "/aciu/:path*", "destination": "/", "permanent": false }
+  ]
+}

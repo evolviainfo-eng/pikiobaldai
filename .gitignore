@@ -1,13 +1,7 @@
-# local tooling (a committed server file makes Vercel treat the repo as a Node app)
-fs-server.js
-.claude/
 .DS_Store
+.claude/
+_gate/
 _qa/
+_phone/
+_ios/
 node_modules/
-# sources, SR masters, scraped datasets and media tooling stay local
-assets/*
-!assets/data/
-assets/data/*
-!assets/data/site.json
-!assets/data/projects.json
-!assets/data/media.json
