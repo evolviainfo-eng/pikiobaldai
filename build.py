@@ -146,8 +146,74 @@ def work_html():
     return '\n        '.join(tiles), data
 
 
+def lb_entry(slug):
+    titles = dict(WORK)
+    ph = project_photos(PROJECTS[slug])
+    return {'title': titles.get(slug, PROJECTS[slug]['title']),
+            'photos': [{k: v for k, v in q.items() if k != 'pos'} for q in ph]}
+
+
+def materials_html(lb):
+    """„Iš ko pagaminta“: tikri plokščių, stalviršių ir furnitūros pavadinimai iš kliento įrašų.
+    Desktop'e plokštės nuotrauka keičiasi pagal pasirinktą medžiagą ir visada telpa į ekraną;
+    telefone medžiagos kortelėmis, paspaudus atsidaro to projekto nuotraukos."""
+    mat = load('site.json')['materials']
+    (ROOT / 'img/m').mkdir(exist_ok=True)
+    data, groups, first = {}, [], None
+    for gi, g in enumerate(mat['groups']):
+        items = []
+        for it in g['items']:
+            sid, slug = it['id'], it['project']
+            if slug not in lb:
+                lb[slug] = lb_entry(slug)
+            sw = []
+            for w in (240, 480):
+                src = SRC / 'img/m' / f'{sid}-{w}.webp'
+                if src.exists():
+                    shutil.copyfile(src, ROOT / 'img/m' / src.name)
+                    sw.append((w, f'/img/m/{src.name}'))
+            pl = photo(it['plate'])
+            alt, pos = PROJECTS[slug]['title'], '50% 50%'
+            for q in project_photos(PROJECTS[slug]):
+                if q['srcset'] == pl['srcset']:
+                    alt, pos = q['alt'], q['pos']
+            data[sid] = {**pl, 'alt': alt, 'pos': pos, 'name': it['name'], 'code': it['code'],
+                         'proj': slug, 'projTitle': lb[slug]['title']}
+            first = first or sid
+            pressed = 'true' if sid == first else 'false'
+            items.append(
+                f'<li><button class="sw" type="button" aria-pressed="{pressed}" data-sw="{sid}" data-proj="{slug}">'
+                f'<span class="sw__box"><img src="{sw[0][1]}" srcset="{", ".join(f"{u} {w}w" for w, u in sw)}" '
+                f'sizes="(min-width: 1024px) 112px, 64px" width="{sw[-1][0]}" height="{sw[-1][0]}" alt="{e(it["name"])}, paviršiaus pavyzdys" loading="lazy" decoding="async"></span>'
+                f'<span class="sw__name">{e(it["name"])}</span><span class="sw__code">{e(it["code"])}</span></button></li>')
+        groups.append(
+            f'<div class="mat__group" role="group" aria-labelledby="mg{gi}"><h3 class="mat__gt" id="mg{gi}">{e(g["title"])}</h3>'
+            f'<ul class="sws" role="list">{"".join(items)}</ul></div>')
+    d = data[first]
+    sizes = '(min-width: 1024px) 52vw, 1px'
+    plate = (
+        f'<figure class="mat__plate">'
+        f'<div class="mat__frame">'
+        f'<img class="mat__img is-front" src="{d["src"]}" srcset="{d["srcset"]}" sizes="{sizes}" width="{d["w"]}" height="{d["h"]}" '
+        f'alt="{e(d["alt"])}" style="object-position:{d["pos"]}" loading="lazy" decoding="async" data-plate-a>'
+        f'<img class="mat__img" src="data:," sizes="{sizes}" width="{d["w"]}" height="{d["h"]}" alt="{e(d["alt"])}" aria-hidden="true" decoding="async" data-plate-b>'
+        f'</div>'
+        f'<figcaption class="mat__cap"><span class="mat__name"><span data-plate-name>{e(d["name"])}</span> · '
+        f'<span class="mat__code" data-plate-code>{e(d["code"])}</span></span>'
+        f'<button class="link" type="button" data-lb="{d["proj"]}" data-plate-link><span data-plate-proj>{e(d["projTitle"])}</span>{ARROW}</button>'
+        f'</figcaption></figure>')
+    html_ = (
+        f'<div class="mat" data-mat>\n        {plate}\n        <div class="mat__side">'
+        f'<h2 class="h2 rv" id="mat-t">{e(mat["h2"])}</h2>'
+        f'<p class="lead rv" style="--d:120ms">{e(mat["text"])}</p>'
+        f'<div class="mat__groups">{"".join(groups)}'
+        f'<p class="mat__note">{e(mat["note"])}</p></div></div>\n      </div>')
+    return mat, html_, data
+
+
 def page():
     tiles, lb = work_html()
+    mat, mat_html, mat_data = materials_html(lb)
     svc = '\n        '.join(
         f'<li class="svc"><h3 class="svc__t">{e(t)}</h3><p class="svc__p">{e(p)}</p></li>' for t, p in SERVICES['items'])
     rev = '\n        '.join(
@@ -200,7 +266,7 @@ def page():
   <div class="wrap hd__in">
     <a class="hd__home" href="#top" aria-label="Pikio baldai, į puslapio pradžią">{logo}</a>
     <nav class="hd__nav" aria-label="Puslapio skyriai">
-      <a href="#paslaugos">Paslaugos</a><a href="#darbai">Darbai</a><a href="#atsiliepimai">Atsiliepimai</a><a href="#kontaktai">Kontaktai</a>
+      <a href="#paslaugos">Paslaugos</a><a href="#darbai">Darbai</a><a href="#medziagos">Medžiagos</a><a href="#atsiliepimai">Atsiliepimai</a><a href="#kontaktai">Kontaktai</a>
     </nav>
     <a class="hd__tel" href="{b['phone_href']}"><span class="hd__tel-n">{b['phone']}</span><span class="hd__tel-s">Skambinti</span></a>
   </div>
@@ -237,6 +303,12 @@ def page():
       <ul class="grid" role="list">
         {tiles}
       </ul>
+    </div>
+  </section>
+
+  <section class="sec sec--mat" id="medziagos" aria-labelledby="mat-t">
+    <div class="wrap">
+      {mat_html}
     </div>
   </section>
 
@@ -289,6 +361,7 @@ def page():
   </div>
 </dialog>
 <script type="application/json" id="lb-data">{json.dumps(lb, ensure_ascii=False)}</script>
+<script type="application/json" id="mat-data">{json.dumps(mat_data, ensure_ascii=False)}</script>
 <script src="/js/lenis.min.js" defer></script>
 <script src="/js/motion.js" defer></script>
 <script src="/js/site.js" defer></script>

@@ -35,6 +35,7 @@
     root.classList.add('lb-open');
     if (lenis()) lenis().stop();
   }
+  window.__lbOpen = open;
   box.addEventListener('close', function () {
     root.classList.remove('lb-open');
     if (lenis()) lenis().start();
@@ -60,5 +61,50 @@
     if (x0 === null) return;
     var dx = ev.clientX - x0; x0 = null;
     if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+  });
+})();
+
+/* „Iš ko pagaminta“: desktop'e medžiaga keičia plokštės nuotrauką, telefone atidaro projekto nuotraukas */
+(function () {
+  var root = document.querySelector('[data-mat]');
+  var raw = document.getElementById('mat-data');
+  if (!root || !raw) return;
+  var data = JSON.parse(raw.textContent);
+  var a = root.querySelector('[data-plate-a]'), b = root.querySelector('[data-plate-b]');
+  var nameEl = root.querySelector('[data-plate-name]'), codeEl = root.querySelector('[data-plate-code]');
+  var link = root.querySelector('[data-plate-link]'), projEl = root.querySelector('[data-plate-proj]');
+  var btns = [].slice.call(root.querySelectorAll('[data-sw]'));
+  var wide = matchMedia('(min-width: 1024px)');
+  var fine = matchMedia('(hover: hover) and (pointer: fine)');
+  var front = a, back = b, token = 0;
+  var scrolledAt = 0;
+  addEventListener('scroll', function () { scrolledAt = Date.now(); }, { passive: true });
+  var cur = (btns.filter(function (x) { return x.getAttribute('aria-pressed') === 'true'; })[0] || btns[0]).getAttribute('data-sw');
+
+  function select(id) {
+    if (!data[id] || id === cur) return;
+    cur = id;
+    var d = data[id], t = ++token, img = back;
+    btns.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-sw') === id ? 'true' : 'false'); });
+    nameEl.textContent = d.name; codeEl.textContent = d.code;
+    projEl.textContent = d.projTitle; link.setAttribute('data-lb', d.proj);
+    img.style.objectPosition = d.pos; img.alt = d.alt; img.width = d.w; img.height = d.h;
+    img.srcset = d.srcset; img.src = d.src;
+    var swap = function () {
+      if (t !== token) return;
+      img.classList.add('is-front'); img.removeAttribute('aria-hidden');
+      front.classList.remove('is-front'); front.setAttribute('aria-hidden', 'true');
+      back = front; front = img;
+    };
+    if (img.decode) img.decode().then(swap, swap); else img.onload = swap;
+  }
+
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (wide.matches) select(btn.getAttribute('data-sw'));
+      else if (window.__lbOpen) window.__lbOpen(btn.getAttribute('data-proj'), btn);
+    });
+    /* hover swaps only when the pointer moves onto a swatch, not when the page scrolls under a resting cursor */
+    btn.addEventListener('mouseenter', function () { if (wide.matches && fine.matches && Date.now() - scrolledAt > 250) select(btn.getAttribute('data-sw')); });
   });
 })();
